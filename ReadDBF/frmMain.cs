@@ -15,10 +15,10 @@ using System.Windows.Forms;
 
 namespace ReadDBF
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
         private DataTable DT;
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace ReadDBF
         {
             DataTable YourResultSet = new DataTable();
 
-            OleDbConnection yourConnectionHandler = new OleDbConnection($"Provider=VFPOLEDB.1;Data Source={new FileInfo(fullPath).Directory};");
+            OleDbConnection yourConnectionHandler = new OleDbConnection($"Provider=VFPOLEDB.1;Data Source={new FileInfo(fullPath)};");
             yourConnectionHandler.Open();
 
             if (yourConnectionHandler.State == ConnectionState.Open)

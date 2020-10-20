@@ -1,6 +1,6 @@
 ﻿namespace ReadDBF
 {
-    partial class Form1
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -47,7 +47,7 @@
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 422);
+            this.dataGridView1.Size = new System.Drawing.Size(700, 422);
             this.dataGridView1.TabIndex = 1;
             // 
             // mnuMain
@@ -57,7 +57,8 @@
             this.toolStripMenuItem1});
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
-            this.mnuMain.Size = new System.Drawing.Size(800, 28);
+            this.mnuMain.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.mnuMain.Size = new System.Drawing.Size(700, 28);
             this.mnuMain.TabIndex = 2;
             this.mnuMain.Text = "menuStrip1";
             // 
@@ -68,40 +69,43 @@
             this.toolStripMenuItem3,
             this.toolStripMenuItem4});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(46, 24);
-            this.toolStripMenuItem1.Text = "File";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(62, 24);
+            this.toolStripMenuItem1.Text = "پرونده";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
-            this.toolStripMenuItem2.Text = "Open";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(226, 26);
+            this.toolStripMenuItem2.Text = "انتخاب بانک اطلاعاتی";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
-            this.toolStripMenuItem3.Text = "Save To CSV";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(226, 26);
+            this.toolStripMenuItem3.Text = "ذخیره در فرمت CSV";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(224, 26);
-            this.toolStripMenuItem4.Text = "Exit";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(226, 26);
+            this.toolStripMenuItem4.Text = "خروج";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
-            // Form1
+            // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.mnuMain);
+            this.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MainMenuStrip = this.mnuMain;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmMain";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
+            this.Text = "انتقال بانک اطلاعاتی فاکس پرو با کد پیج ایران سیستم به ویندوز";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
