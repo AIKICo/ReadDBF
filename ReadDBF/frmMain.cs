@@ -10,6 +10,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -54,9 +55,22 @@ namespace ReadDBF
                     {
                         try
                         {
+                            var value = ConvertTo.UnicodeFrom(TextEncoding.Arabic1256, Convert.ToString(reader[i]));
+                            var reg = new Regex(@"\d{1,2}\/\d{1,2}\/\d{1,2}");
                             if (((DataColumn)YourResultSet.Columns[i]).DataType == typeof(System.String))
                             {
-                                dataRow[((DataColumn)YourResultSet.Columns[i])] = ConvertTo.UnicodeFrom(TextEncoding.Arabic1256, Convert.ToString(reader[i]));
+                                if (reg.IsMatch(value))
+                                {
+                                    dataRow[((DataColumn)YourResultSet.Columns[i])] = ConvertTo.UnicodeFrom(TextEncoding.Arabic1256, Convert.ToString(reader[i]), false);
+                                }
+                                else if (reader[i].ToString().ToLower() == "true" || reader[i].ToString().ToLower() == "false")
+                                {
+                                    dataRow[((DataColumn)YourResultSet.Columns[i])] = Convert.ToString(reader[i]);
+                                }
+                                else
+                                {
+                                    dataRow[((DataColumn)YourResultSet.Columns[i])] = value;
+                                }
                             }
                         }
                         catch (Exception)
@@ -79,7 +93,6 @@ namespace ReadDBF
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)

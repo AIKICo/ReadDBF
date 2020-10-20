@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConvertTo.cs" />
+    <Compile Include="ExtentionMethodCollection.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>

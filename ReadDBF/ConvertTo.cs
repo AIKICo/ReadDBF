@@ -162,7 +162,7 @@ namespace IranSystemConvertor
         /// <param name="textEncoding">کدپیج رشته ایران سیستم</param>
         /// <param name="iranSystemEncodedString">رشته ایران سیستم</param>
         /// <returns></returns>
-        public static string UnicodeFrom(TextEncoding textEncoding, string iranSystemEncodedString)
+        public static string UnicodeFrom(TextEncoding textEncoding, string iranSystemEncodedString, bool mustReverse=true)
         {
             // حذف فاصله های موجود در رشته
             iranSystemEncodedString = iranSystemEncodedString.Replace(" ", "");
@@ -177,8 +177,11 @@ namespace IranSystemConvertor
             if (!IsNumber(iranSystemEncodedString))
             {
                 /// تغییر ترتیب کاراکترها از آخر به اول 
-                iranSystemEncodedString = Reverse(iranSystemEncodedString);
-
+                
+                if (mustReverse)
+                {
+                    iranSystemEncodedString = Reverse(iranSystemEncodedString);
+                }
                 /// خارج کردن اعداد درون رشته
                 iranSystemEncodedString = ExcludeNumbers(iranSystemEncodedString);
             }
